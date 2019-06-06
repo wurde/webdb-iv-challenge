@@ -7,6 +7,8 @@ exports.up = function(knex, Promise) {
     table.integer('dishes_id')
       .notNullable()
       .references('id').inTable('dishes')
+      .onUpdate('CASCADE')
+      .onDelete('CASCADE')
     table.timestamps()
   })
 }

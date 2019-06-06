@@ -8,6 +8,8 @@ exports.up = function(knex, Promise) {
     table.integer('cookbooks_id')
       .notNullable()
       .references('id').inTable('cookbooks')
+      .onUpdate('CASCADE')
+      .onDelete('CASCADE')
     table.timestamps()
   })
 }

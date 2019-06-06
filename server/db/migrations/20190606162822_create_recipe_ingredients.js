@@ -7,9 +7,13 @@ exports.up = function(knex, Promise) {
     table.integer('ingredients_id')
       .notNullable()
       .references('id').inTable('ingredients')
+      .onUpdate('CASCADE')
+      .onDelete('CASCADE')
     table.integer('recipes_id')
       .notNullable()
       .references('id').inTable('recipes')
+      .onUpdate('CASCADE')
+      .onDelete('CASCADE')
     table.timestamps()
   })
 }
