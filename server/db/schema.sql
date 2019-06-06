@@ -1,12 +1,12 @@
 BEGIN TRANSACTION;
 
 CREATE TABLE IF NOT EXISTS cookbooks (
-  id integer PRIMARY KEY AUTOINCREMENT
+  id integer PRIMARY KEY AUTOINCREMENT,
   name string
 );
 
 CREATE TABLE IF NOT EXISTS dishes (
-  id integer PRIMARY KEY AUTOINCREMENT
+  id integer PRIMARY KEY AUTOINCREMENT,
   cookbooks_id integer NOT NULL,
   name string,
   CONSTRAINT fk_cookbooks_id
@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS dishes (
 );
 
 CREATE TABLE IF NOT EXISTS recipes (
-  id integer PRIMARY KEY AUTOINCREMENT
+  id integer PRIMARY KEY AUTOINCREMENT,
   dishes_id integer NOT NULL,
   name string,
   CONSTRAINT fk_dishes_id
@@ -26,12 +26,12 @@ CREATE TABLE IF NOT EXISTS recipes (
 );
 
 CREATE TABLE IF NOT EXISTS ingredients (
-  id integer PRIMARY KEY AUTOINCREMENT
+  id integer PRIMARY KEY AUTOINCREMENT,
   name string
 );
 
 CREATE TABLE IF NOT EXISTS recipe_ingredients (
-  id integer PRIMARY KEY AUTOINCREMENT
+  id integer PRIMARY KEY AUTOINCREMENT,
   recipes_id integer NOT NULL,
   ingredients_id integer NOT NULL,
   quantity float,
