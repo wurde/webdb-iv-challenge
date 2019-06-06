@@ -61,4 +61,4 @@ typings/
 .next
 
 # Mac Cruft
-.DS_Store
+.DS_Store.gitsync_lock
